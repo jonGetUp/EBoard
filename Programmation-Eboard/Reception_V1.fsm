@@ -1,0 +1,34 @@
+<?xml version='1.0'?>
+<!DOCTYPE qfsmproject SYSTEM 'qfsm.dtd'>
+<qfsmproject version="0.54" author="Qfsm">
+  <machine nummooreout="0" transfontitalic="0" draw_it="1" statefontsize="8" transfont="Helvetica" statefontitalic="0" author="Gaspoz Jonathan" description="" version="V1.0" name="GrapheEtats-Eboard-Fonction simple" arrowtype="1" numbits="3" statefontweight="50" statefont="Helvetica" numin="0" transfontsize="8" transfontweight="50" type="2" numout="0" initialstate="6">
+    <outputnames_moore></outputnames_moore>
+    <inputnames></inputnames>
+    <outputnames></outputnames>
+    <itransition ypos="320" endx="682" xpos="622" endy="320"/>
+    <state pencolor="0" exit_actions="ESC++" radius="40" description="ESC++ up to 255" finalstate="0" entry_actions="IN=10" moore_outputs="" ypos="428" code="5" xpos="646" linewidth="2">Acc</state>
+    <state pencolor="0" exit_actions="ESC--" radius="40" description="ESC-- up to 0" finalstate="0" entry_actions="IN=00" moore_outputs="" ypos="320" code="6" xpos="722" linewidth="2">Init</state>
+    <state pencolor="0" exit_actions="ESC" radius="40" description="" finalstate="0" entry_actions="IN=01" moore_outputs="" ypos="433" code="0" xpos="797" linewidth="2">Hold</state>
+    <state pencolor="0" exit_actions="err++" radius="40" description="Every single Error the output is incremented&#xa;The value of ESC don't change&#xa;" finalstate="0" entry_actions="IN=?" moore_outputs="" ypos="321" code="1" xpos="477" linewidth="2">Error</state>
+    <state pencolor="0" exit_actions="Init" radius="40" description="" finalstate="0" entry_actions="2Sec" moore_outputs="" ypos="315" code="2" xpos="961" linewidth="1">WAIT</state>
+    <state pencolor="0" exit_actions="BIP!...;FW" radius="40" description="If more than 5 errors occurs, the alarm PIB! PIB!...&#xa;Free Wheels" finalstate="0" entry_actions="" moore_outputs="" ypos="197" code="3" xpos="719" linewidth="2">Fail</state>
+    <transition c1x="515.977123151303" c2y="189.1391206779843" c1y="220.7120450314387" description="" straight="0" type="2" ypos="281.0583090688997" endx="679" xpos="474.8409896794" endy="197" c2x="640.4393210817708">
+      <from>1</from>
+      <to>3</to>
+      <inputs default="0" any="0" invert="0">Error=5</inputs>
+      <outputs></outputs>
+    </transition>
+    <transition c1x="998.7600306209274" c2y="311.5252713434526" c1y="201.0957415743089" description="" straight="1" type="2" ypos="281.5833167102424" endx="999.3210566475973" xpos="982.9846600590511" endy="303.5328025476298" c2x="1080.949682203678">
+      <from>2</from>
+      <to>2</to>
+      <inputs default="0" any="0" invert="0"></inputs>
+      <outputs></outputs>
+    </transition>
+    <transition c1x="846.1073219319322" c2y="240.7807307881585" c1y="206.7750121756394" description="" straight="0" type="2" ypos="198.5373248840482" endx="933.1831428993578" xpos="758.9704469852526" endy="286.2559143293364" c2x="904.2189192129872">
+      <from>3</from>
+      <to>2</to>
+      <inputs default="0" any="0" invert="0"></inputs>
+      <outputs></outputs>
+    </transition>
+  </machine>
+</qfsmproject>
